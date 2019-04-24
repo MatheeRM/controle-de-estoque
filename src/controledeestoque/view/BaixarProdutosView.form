@@ -28,7 +28,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="JPanel" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="JPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -39,33 +42,31 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="separatorSuperior" alignment="0" max="32767" attributes="0"/>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="273" max="32767" attributes="0"/>
-                  <Component id="buttonInserir" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="buttonLimpar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="labelInserirProdutos" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="labelBaixarProdutos" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="labelCodigo" min="-2" max="-2" attributes="0"/>
                               <Component id="labelQuantidade" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="textFieldQuantidade" pref="304" max="32767" attributes="0"/>
-                              <Component id="textFieldCodigo" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="textFieldCodigo" min="-2" pref="304" max="-2" attributes="0"/>
+                              <Component id="textFieldQuantidade" min="-2" pref="304" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="buttonBaixar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="buttonLimpar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -73,33 +74,33 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="labelInserirProdutos" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelBaixarProdutos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="separatorSuperior" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textFieldCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="labelCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="textFieldQuantidade" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelQuantidade" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textFieldQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="buttonInserir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonBaixar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="buttonLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="26" max="32767" attributes="0"/>
+                  <EmptySpace pref="75" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="labelInserirProdutos">
+        <Component class="javax.swing.JLabel" name="labelBaixarProdutos">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Inserir Produtos"/>
+            <Property name="text" type="java.lang.String" value="Baixar Produtos"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSeparator" name="separatorSuperior">
@@ -118,14 +119,14 @@
         </Component>
         <Component class="javax.swing.JTextField" name="textFieldCodigo">
         </Component>
+        <Component class="javax.swing.JButton" name="buttonBaixar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Baixar"/>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JButton" name="buttonLimpar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Limpar"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="buttonInserir">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Inserir"/>
           </Properties>
         </Component>
       </SubComponents>
