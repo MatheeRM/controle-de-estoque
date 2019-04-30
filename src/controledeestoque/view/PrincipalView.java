@@ -5,6 +5,8 @@
  */
 package controledeestoque.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author admin
@@ -48,6 +50,11 @@ public class PrincipalView extends javax.swing.JFrame {
         buttonRelatorioDeEstoque.setText("Relatório de Estoque");
 
         buttonBaixarProdutos.setText("Baixar Produtos");
+        buttonBaixarProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBaixarProdutosActionPerformed(evt);
+            }
+        });
 
         buttonInserirProdutos.setText("Inserir Produtos");
         buttonInserirProdutos.addActionListener(new java.awt.event.ActionListener() {
@@ -90,14 +97,12 @@ public class PrincipalView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(panelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 22, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(tabbedPaneCentral)))
+                    .addComponent(tabbedPaneCentral))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -120,12 +125,29 @@ public class PrincipalView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonInserirProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInserirProdutosActionPerformed
-        // TODO add your handling code here:
+  
+        tabbedPaneCentral.removeAll();;
+        tabbedPaneCentral.add("Inserir Produtos", 
+                new InserirProdutosView());
+        tabbedPaneCentral.validate();
+        tabbedPaneCentral.repaint();
     }//GEN-LAST:event_buttonInserirProdutosActionPerformed
 
     private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
         // TODO add your handling code here:
+        if (JOptionPane.showConfirmDialog(this, "Deseja mesmo fechar o sistema?","Confirmação",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_buttonSairActionPerformed
+
+    private void buttonBaixarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBaixarProdutosActionPerformed
+        // TODO add your handling code here:
+        tabbedPaneCentral.removeAll();;
+        tabbedPaneCentral.add("Baixar Produtos", new BaixarProdutosView());
+        tabbedPaneCentral.validate();
+        tabbedPaneCentral.repaint();
+    }//GEN-LAST:event_buttonBaixarProdutosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,4 +193,4 @@ public class PrincipalView extends javax.swing.JFrame {
     private javax.swing.JPanel panelBotoes;
     private javax.swing.JTabbedPane tabbedPaneCentral;
     // End of variables declaration//GEN-END:variables
-}
+ }

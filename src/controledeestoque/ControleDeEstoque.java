@@ -5,6 +5,8 @@
  */
 package controledeestoque;
 
+import controledeestoque.view.PrincipalView;
+
 /**
  *
  * @author admin
@@ -15,7 +17,11 @@ public class ControleDeEstoque {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+ PrincipalView principalView = new PrincipalView();
+ principalView.validate();
+ principalView.pack();
+ principalView.setVisible(true);
     }
     
 }

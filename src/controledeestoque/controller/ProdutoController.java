@@ -6,6 +6,8 @@
 package controledeestoque.controller;
 
 import controledeestoque.dao.ProdutosDAO;
+import controledeestoque.view.BaixarProdutosView;
+import controledeestoque.view.InserirProdutosView;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,12 +48,12 @@ public class ProdutoController {
 
     public void Baixar(int id, int qtde) {
         try {
-            ProdutosDAO produtosDAO = new ProdutosDAO();
-            Integer quantidadeDeEstoque;
-            quantidadeDeEstoque = produtosDAO;
-            buscarQuantidadeDeEstoque(id);
+            ProdutosDAO ProdutosDAO = new ProdutosDAO();
+          Integer quantidadeDeEstoque;
+          quantidadeDeEstoque = ProdutosDAO.
+                  buscarQuantidadeDeEstoque(id);
             if (quantidadeDeEstoque != null) {
-                produtosDAO.atualizar(id,
+                ProdutosDAO.atualizar(id,
                         quantidadeDeEstoque - qtde);
                 JOptionPane.showMessageDialog(null,
                         "Estoque atualizado", "Sucesso",
