@@ -5,6 +5,12 @@
  */
 package controledeestoque.view;
 
+import controledeestoque.controller.RelatorioDeEstoque;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -48,6 +54,11 @@ public class PrincipalView extends javax.swing.JFrame {
         });
 
         buttonRelatorioDeEstoque.setText("Relatório de Estoque");
+        buttonRelatorioDeEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRelatorioDeEstoqueActionPerformed(evt);
+            }
+        });
 
         buttonBaixarProdutos.setText("Baixar Produtos");
         buttonBaixarProdutos.addActionListener(new java.awt.event.ActionListener() {
@@ -148,6 +159,32 @@ public class PrincipalView extends javax.swing.JFrame {
         tabbedPaneCentral.validate();
         tabbedPaneCentral.repaint();
     }//GEN-LAST:event_buttonBaixarProdutosActionPerformed
+
+    private void buttonRelatorioDeEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRelatorioDeEstoqueActionPerformed
+        // TODO add your handling code here:
+        try{
+            Date data = new Date();
+            DateFormat df = new SimpleDateFormat("_dd_MM_YYYY");
+            RelatorioDeEstoque relatorioEstoque =
+                    new RelatorioDeEstoque("C:\\Relatorio\\"
+                        + "Relatorio_de_Estoque" +
+                        df.format(data) + ".pdf");
+            if (relatorioEstoque.geraRelatorio()){
+                JOptionPane.showMessageDialog(this,
+                        "Relatório gerado com sucesso! O relatório "
+                        + "gerado se encontra em C:\\Relatorio\\",
+                        "Sucesso", JOptionPane.OK_OPTION);
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Relatório não gerado!",
+                        "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        }catch (Exception e) {
+            Logger.getLogger(PrincipalView.class
+                       .getName()).log(Level.SEVERE, null, e);
+             }
+        
+    }//GEN-LAST:event_buttonRelatorioDeEstoqueActionPerformed
 
     /**
      * @param args the command line arguments
