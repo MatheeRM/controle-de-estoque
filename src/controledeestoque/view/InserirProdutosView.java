@@ -5,6 +5,8 @@
  */
 package controledeestoque.view;
 
+import controledeestoque.controller.ProdutoController;
+
 /**
  *
  * @author admin
@@ -44,8 +46,18 @@ public class InserirProdutosView extends javax.swing.JPanel {
         labelQuantidade.setText("Quantidade:");
 
         buttonLimpar.setText("Limpar");
+        buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLimparActionPerformed(evt);
+            }
+        });
 
         buttonInserir.setText("Inserir");
+        buttonInserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonInserirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JPanelLayout = new javax.swing.GroupLayout(JPanel);
         JPanel.setLayout(JPanelLayout);
@@ -108,6 +120,22 @@ public class InserirProdutosView extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInserirActionPerformed
+        // TODO add your handling code here:
+    ProdutoController produtoController = new ProdutoController();
+        produtoController.Inserir((Integer.parseInt
+                (textFieldCodigo.getText())),Integer.parseInt(textFieldQuantidade.getText()));
+    }//GEN-LAST:event_buttonInserirActionPerformed
+
+    private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
+        // TODO add your handling code here:
+        limparCampos();
+    }//GEN-LAST:event_buttonLimparActionPerformed
+
+    private void limparCampos() {
+        textFieldCodigo.setText("");
+        textFieldQuantidade.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanel;

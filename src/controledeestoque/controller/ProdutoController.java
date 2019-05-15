@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author admin
@@ -34,7 +35,7 @@ public class ProdutoController {
             } else {
                 JOptionPane.showMessageDialog(null,
                         "Código Inválido", "Operação Incorreta",
-                        JOptionPane.ERROR);
+                        JOptionPane.ERROR_MESSAGE);
             }
             //limparCampos();
         } catch (SQLException ex) {

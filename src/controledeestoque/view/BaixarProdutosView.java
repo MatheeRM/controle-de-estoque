@@ -5,6 +5,8 @@
  */
 package controledeestoque.view;
 
+import controledeestoque.controller.ProdutoController;
+
 /**
  *
  * @author admin
@@ -44,8 +46,18 @@ public class BaixarProdutosView extends javax.swing.JPanel {
         labelQuantidade.setText("Quantidade:");
 
         buttonBaixar.setText("Baixar");
+        buttonBaixar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBaixarActionPerformed(evt);
+            }
+        });
 
         buttonLimpar.setText("Limpar");
+        buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLimparActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JPanelLayout = new javax.swing.GroupLayout(JPanel);
         JPanel.setLayout(JPanelLayout);
@@ -107,6 +119,22 @@ public class BaixarProdutosView extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
+        // TODO add your handling code here:
+        limparCampos();
+    }//GEN-LAST:event_buttonLimparActionPerformed
+
+    private void buttonBaixarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBaixarActionPerformed
+        // TODO add your handling code here:
+        ProdutoController produtoController = new ProdutoController();
+        produtoController.Baixar((Integer.parseInt
+                (textFieldCodigo.getText())),Integer.parseInt(textFieldQuantidade.getText()));
+    }//GEN-LAST:event_buttonBaixarActionPerformed
+
+    private void limparCampos() {
+        textFieldCodigo.setText("");
+        textFieldQuantidade.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanel;
